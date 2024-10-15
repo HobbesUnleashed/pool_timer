@@ -17,6 +17,11 @@ let dark = false;
 
 function startPause() {
     if (!isRunning) {
+
+        if (timer.innerHTML == "45") {
+            timeleft = 44;
+        }
+
         countdown = setInterval(function() {
             timer.innerHTML = timeLeft;
             timeLeft--;
@@ -37,6 +42,7 @@ function startPause() {
     }
 
     isRunning = !isRunning;
+    console.log(timeleft);
 }
 
 
@@ -67,12 +73,18 @@ function showDisabled() {
     } else if (yellowExtUsed) {
         console.log("yellow");
         document.getElementById("red").disabled = false;
-    }
+    } 
 }
 
-// function reset() {
-
-// }
+function reset() {
+    clearInterval(countdown);
+    isRunning = false;
+    timer.innerHTML = "45";
+    startPauseBtn.innerHTML = "Start";
+    timeleft = 44;
+    console.log(timeleft);
+    showDisabled();
+}
 
 
 
