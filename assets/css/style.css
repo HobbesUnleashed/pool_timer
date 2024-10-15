@@ -12,6 +12,7 @@ body {
     background: url(../images/Cousins-bw.webp) no-repeat center center/cover;
     min-height: 100vh;
     color: #fff;
+    background-color: darkgrey;
 }
 
 header {
