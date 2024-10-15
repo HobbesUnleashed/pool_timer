@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Link to the css stylesheet -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <title>Rack 'n' Beard - Shot clocks</title>
+</head>
+<body>
+    
+    <header id="header">
+        <div id="logo">
+            <img src="assets/images/wo-glasses-bw.svg" alt="Rack 'n' Beard logo" name="primaryLogo" id="logoImg">
+        </div>
+        <div id="brand">
+            Rack 'n' Beard
+        </div>
+        <div id="slogan">
+            Take a shot, you're on the clock!
+        </div>
+        <div id="sponsor">
+                <img src="assets/images/Cousins-logo-bw.webp" alt="Cousins Snooker and Pool club logo - sponsors" name="secondaryLogo" id="sponsorImg">
+        </div>
+    </header>
+
+    <main id="main">
+        
+        <section id="home">
+            <div id="disOpts">Select your length of shot clock</div>
+            <button onclick="" id="fifteen">15 seconds</button>
+            <button onclick="" id="thirty">30 seconds</button>
+            <button onclick="" id="fortyFive">45 seconds</button>
+            <button onclick="" id="sixty">60 seconds</button>
+            <button onclick="" id="custom">Custom timer</button>
+        </section>
+
+        <section id="clocks">
+            <div id="timer">45</div>
+            <button onclick="startPause()" id="startPause">Start</button>
+            <button onclick="reset()" id="reset">Reset</button>
+            <button onclick="addTime('yellow')" id="yellow">Yellow+</button>
+            <button onclick="addTime('red')" id="red">Red+</button>
+            <button onclick="" id="resetFrame">Reset Frame</button>
+        </section>
+    </main>
+
+    <footer id="footer">
+        <div id="mode">
+            <button id="modeBtn">Colour mode</button>
+        </div>
+        <div id="copyright">
+            &#169; Rack 'n'Beard - All materials are either the intellectual and real property of Rack 'n' Beard productions or used with permission
+        </div>
+    </footer>
+
+    <!-- Javascript link -->
+    <script src="assets/js/script.js"></script>
+</body>
+</html>
