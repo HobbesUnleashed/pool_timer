@@ -33,7 +33,7 @@ function startPause() {
         startPauseBtn.innerHTML = "Pause";
     } else {
         clearInterval(countdown);
-        startPauseBtn.innerHTML = "Start"
+        startPauseBtn.innerHTML = "Resume"
     }
 
     isRunning = !isRunning;
@@ -46,13 +46,15 @@ function addTime(buttonPressed) {
         timer.innerHTML = timeLeft;
         timer.style.color = "white";
         redExtUsed =true;
-        console.log(this.redExtUsed);
+        console.log("redExtUsed");
+        timeLeft--;
     } else {
         timeLeft += 16;
         timer.innerHTML = timeLeft;
         timer.style.color = "white";
         yellowExtUsed = true;
-        console.log(this.yellowExtUsed);
+        console.log("yellowExtUsed");
+        timeLeft--;
     }
     document.getElementById('red').disabled = true;
     document.getElementById('yellow').disabled = true;
@@ -68,7 +70,9 @@ function showDisabled() {
     }
 }
 
+// function reset() {
 
+// }
 
 
 
