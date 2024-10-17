@@ -51,7 +51,7 @@ function startPause() {
     }
 
     isRunning = !isRunning;
-    console.log(timeLeft);
+    // console.log(timeLeft);
 }
 
 function addTime(buttonPressed) {
@@ -61,7 +61,7 @@ function addTime(buttonPressed) {
         timer.innerHTML = timeLeft;
         timer.style.color = "white";
         redExtUsed =true;
-        console.log("redExtUsed");
+        // console.log("redExtUsed");
         timeLeft--;
     } else {
         yellcount++;
@@ -69,7 +69,7 @@ function addTime(buttonPressed) {
         timer.innerHTML = timeLeft;
         timer.style.color = "white";
         yellowExtUsed = true;
-        console.log("yellowExtUsed");
+        // console.log("yellowExtUsed");
         timeLeft--;
     }
     red.disabled = true;
@@ -93,13 +93,31 @@ function showDisabled() {
 function reset() {
     clearInterval(countdown);
     isRunning = false;
-    timeleft = initialsetTime;
+    timeLeft = initialsetTime;
     timer.innerHTML = initialsetTime+1;
     startPauseBtn.innerHTML = "Start";
-    console.log(timeleft);
     showDisabled();
+    // console.log(timeLeft);
+    // console.log(redcount);
+    // console.log(yellcount);
 }
 
+function resetFrame() {
+    reset();
+    yellcount = 0;
+    redcount = 0;
+    redExtUsed = false;
+    yellowExtUsed = false;
+    red.disabled = false;
+    yellow.disabled = false;
+    // console.log(timeLeft);
+    // console.log("red count: " + redcount);
+    // console.log("Yellow count: " + yellcount);
+    // console.log("Yellow disabled: " + yellow.disabled);
+    // console.log("red disabled: " + red.disabled);
+    // console.log("Yellow used: " + yellowExtUsed);
+    // console.log("red used: " + redExtUsed);
+}
 
 // Add an event listener for the color mode
 document.getElementById("modeBtn").addEventListener("click", function() {
