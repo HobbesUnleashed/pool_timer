@@ -2,6 +2,9 @@
 const timer = document.getElementById("timer");
 //startPause button
 const startPauseBtn = document.getElementById("startPause");
+// Set constants for the elements to call regularly
+var red = document.getElementById("red");
+var yellow = document.getElementById("yellow");
 // Initialize the countdown time in seconds
 let timeLeft = 44;
 // Variable to store the interval ID
@@ -14,6 +17,10 @@ let yellowExtUsed = false;
 let redExtUsed = false;
 // Flag to check if dark mode already active
 let dark = false;
+// Counters to track if the extension buttons have been pressed
+var redcount = 0;
+var yellcount = 0;
+
 
 function startPause() {
     if (!isRunning) {
@@ -45,9 +52,9 @@ function startPause() {
     console.log(timeleft);
 }
 
-
 function addTime(buttonPressed) {
     if(buttonPressed == "red") {
+        redcount++;
         timeLeft += 16;
         timer.innerHTML = timeLeft;
         timer.style.color = "white";
@@ -55,6 +62,7 @@ function addTime(buttonPressed) {
         console.log("redExtUsed");
         timeLeft--;
     } else {
+        yellcount++;
         timeLeft += 16;
         timer.innerHTML = timeLeft;
         timer.style.color = "white";
@@ -62,17 +70,17 @@ function addTime(buttonPressed) {
         console.log("yellowExtUsed");
         timeLeft--;
     }
-    document.getElementById('red').disabled = true;
-    document.getElementById('yellow').disabled = true;
+    red.disabled = true;
+    yellow.disabled = true;
 }
 
 function showDisabled() {
     if(redExtUsed) {
-        console.log('red');
-        document.getElementById("yellow").disabled = false;
+        console.log('redcount = ' + redcount + " yellowcount = " + yellcount);
+        yellow.disabled = false;
     } else if (yellowExtUsed) {
-        console.log("yellow");
-        document.getElementById("red").disabled = false;
+        console.log("yellowcount = " + yellcount + " redcount = " + redcount);
+        red.disabled = false;
     } 
 }
 
@@ -87,7 +95,19 @@ function reset() {
 }
 
 
-
+// function counters() {
+//     if(redcount >= 1 && yellcount =0) {
+//         yellow.disabled = false;
+//     } else if(yellcount >= 1 && redcount = 0) {
+//         red.disabled = false;
+//     } else if (yellcount >= 1 && redcount >= 1) {
+//         red.disabled = true;
+//         yellow.disabled = true;
+//     } else {
+//         red.disabled = false;
+//         yellow.disabled = false;
+//     }
+// }
 
 
 
