@@ -28,20 +28,20 @@
         
         <section id="home">
             <div id="disOpts">Select your length of shot clock</div>
-            <button onclick="" id="fifteen">15 seconds</button>
-            <button onclick="" id="thirty">30 seconds</button>
-            <button onclick="" id="fortyFive">45 seconds</button>
-            <button onclick="" id="sixty">60 seconds</button>
-            <button onclick="" id="custom">Custom timer</button>
+            <button onclick="setTimer(14)" id="fifteen">15 seconds</button>
+            <button onclick="setTimer(29)" id="thirty">30 seconds</button>
+            <button onclick="setTimer(44)" id="fortyFive">45 seconds</button>
+            <button onclick="setTimer(59)" id="sixty">60 seconds</button>
+            <!-- <button onclick="" id="custom">Custom timer</button> -->
         </section>
 
         <section id="clocks">
-            <div id="timer">45</div>
+            <div id="timer">--</div>
             <button onclick="startPause()" id="startPause">Start</button>
             <button onclick="reset()" id="reset">Reset</button>
             <button onclick="addTime('yellow')" id="yellow">Yellow+</button>
             <button onclick="addTime('red')" id="red">Red+</button>
-            <button onclick="" id="resetFrame">Reset Frame</button>
+            <button onclick="counters()" id="resetFrame">Reset Frame</button>
         </section>
     </main>
 

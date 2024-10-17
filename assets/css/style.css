@@ -99,11 +99,11 @@ main {
 
 /* #clocks {
     display: none;
-} */
+}
 
 #home {
     display: none;
-} 
+}  */
 
 #disOpts, #timer {
     grid-area: dis;

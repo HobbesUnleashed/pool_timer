@@ -6,7 +6,8 @@ const startPauseBtn = document.getElementById("startPause");
 var red = document.getElementById("red");
 var yellow = document.getElementById("yellow");
 // Initialize the countdown time in seconds
-let timeLeft = 44;
+let timeLeft;
+let initialsetTime;
 // Variable to store the interval ID
 let countdown;
 // Flag to check if the timer is running
@@ -21,16 +22,17 @@ let dark = false;
 var redcount = 0;
 var yellcount = 0;
 
+function setTimer(time) {
+    timeLeft = time;
+    initialsetTime = time;
+    document.getElementById("timer").innerHTML = time+1;
+}
 
 function startPause() {
     if (!isRunning) {
 
-        if (timer.innerHTML == "45") {
-            timeleft = 44;
-        }
-
         countdown = setInterval(function() {
-            timer.innerHTML = timeLeft;
+            timer.innerHTML = timeLeft+1;
             timeLeft--;
 
             if (timeLeft < 5) {
@@ -49,7 +51,7 @@ function startPause() {
     }
 
     isRunning = !isRunning;
-    console.log(timeleft);
+    console.log(timeLeft);
 }
 
 function addTime(buttonPressed) {
@@ -75,84 +77,28 @@ function addTime(buttonPressed) {
 }
 
 function showDisabled() {
-    if(redExtUsed) {
-        console.log('redcount = ' + redcount + " yellowcount = " + yellcount);
+    if(redcount > 0 && yellcount > 0) {
+        console.log("both used");
+        return;
+    }
+    if(redcount > 0) {
         yellow.disabled = false;
-    } else if (yellowExtUsed) {
-        console.log("yellowcount = " + yellcount + " redcount = " + redcount);
+    }
+    if(yellcount > 0) {
         red.disabled = false;
-    } 
-}
-
-function reset() {
-    clearInterval(countdown);
-    isRunning = false;
-    timer.innerHTML = "45";
-    startPauseBtn.innerHTML = "Start";
-    timeleft = 44;
-    console.log(timeleft);
-    showDisabled();
-}
-
-
-function counters() {
-    if(redcount >= 1 && yellcount = 0) {
-        yellow.disabled = false;
-    } 
-    else if(yellcount >= 1 && redcount = 0) {
-        red.disabled = false;
-    } 
-    else if (yellcount >= 1 && redcount >= 1) {
-        red.disabled = true;
-        yellow.disabled = true;
-    } 
-    else {
-        red.disabled = false;
-        yellow.disabled = false;
     }
 }
 
 
-counters();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+function reset() {
+    clearInterval(countdown);
+    isRunning = false;
+    timeleft = initialsetTime;
+    timer.innerHTML = initialsetTime+1;
+    startPauseBtn.innerHTML = "Start";
+    console.log(timeleft);
+    showDisabled();
+}
 
 
 // Add an event listener for the color mode
