@@ -95,22 +95,25 @@ function reset() {
 }
 
 
-// function counters() {
-//     if(redcount >= 1 && yellcount =0) {
-//         yellow.disabled = false;
-//     } else if(yellcount >= 1 && redcount = 0) {
-//         red.disabled = false;
-//     } else if (yellcount >= 1 && redcount >= 1) {
-//         red.disabled = true;
-//         yellow.disabled = true;
-//     } else {
-//         red.disabled = false;
-//         yellow.disabled = false;
-//     }
-// }
+function counters() {
+    if(redcount >= 1 && yellcount = 0) {
+        yellow.disabled = false;
+    } 
+    else if(yellcount >= 1 && redcount = 0) {
+        red.disabled = false;
+    } 
+    else if (yellcount >= 1 && redcount >= 1) {
+        red.disabled = true;
+        yellow.disabled = true;
+    } 
+    else {
+        red.disabled = false;
+        yellow.disabled = false;
+    }
+}
 
 
-
+counters();
 
 
 
