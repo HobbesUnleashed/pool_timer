@@ -97,11 +97,11 @@ main {
     z-index: 99;
 }
 
-/* #clocks {
+#clocks {
     display: none;
 }
 
-#home {
+/* #home {
     display: none;
 }  */
 
@@ -160,9 +160,15 @@ footer {
     grid-template-columns: repeat(8, 1fr);
     grid-template-rows: repeat(2, 50px);
     grid-template-areas:
-    "mode mode .  .  .  .  .  .  ."
-    ".    cr   cr cr cr cr cr cr ."
+    "mode mode .  .  .  .  .  beg beg"
+    ".    cr   cr cr cr cr cr cr  .  "
     ;
+}
+
+#beg {
+    grid-area: beg;
+    align-content: center;
+    justify-self: center;
 }
 
 #mode {
@@ -217,6 +223,10 @@ footer {
     #slogan { 
         grid-area: title2;
         font-size: 35px;
+    }
+
+    #disOpts {
+        font-size: 2.5em;
     }
 }
 

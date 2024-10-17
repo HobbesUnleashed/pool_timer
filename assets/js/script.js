@@ -1,4 +1,7 @@
-//Set the timer id to a variable
+// Variables for the various screen views by ID
+const options = document.getElementById("home");
+const clock = document.getElementById("clocks");
+// Set the timer id to a variable
 const timer = document.getElementById("timer");
 //startPause button
 const startPauseBtn = document.getElementById("startPause");
@@ -23,6 +26,8 @@ var redcount = 0;
 var yellcount = 0;
 
 function setTimer(time) {
+    options.style.display = "none";
+    clocks.style.display = "grid";
     timeLeft = time;
     initialsetTime = time;
     document.getElementById("timer").innerHTML = time+1;
@@ -144,3 +149,9 @@ document.getElementById("modeBtn").addEventListener("click", function() {
         this.innerHTML = `Colour mode`
     }
 });
+
+function beginning() {
+    clock.style.display = "none";
+    options.style.display = "grid";
+    resetFrame();
+}
