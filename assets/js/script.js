@@ -40,11 +40,13 @@ function startPause() {
             timer.innerHTML = timeLeft+1;
             timeLeft--;
 
-            if (timeLeft < 5) {
+            if (timeLeft < 4) {
                 timer.style.color = "red";
             }
 
-            if (timeLeft < 0) {
+
+
+            if (timeLeft < -1) {
                 clearInterval(countdown);
                 timer.innerHTML = "X";
             }
@@ -101,6 +103,7 @@ function reset() {
     timeLeft = initialsetTime;
     timer.innerHTML = initialsetTime+1;
     startPauseBtn.innerHTML = "Start";
+    timer.style.color = "white";
     showDisabled();
     // console.log(timeLeft);
     // console.log(redcount);
